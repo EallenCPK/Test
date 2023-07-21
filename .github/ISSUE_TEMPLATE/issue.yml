@@ -10,9 +10,9 @@ body:
     options:
     - label: I have searched the existing issues
       required: true
-  - type: dropdown
-    id: version
-    attributes:
+- type: dropdown
+  id: version
+  attributes:
       label: Version
       description: What version of our software are you running?
       options:
@@ -53,7 +53,7 @@ body:
         - OS:
         - Node:
         - npm:
-    render: markdown
+
   validations:
     required: false
 - type: textarea
