@@ -9,7 +9,22 @@ name: run main.py
 # on:
 #   issues:
 #     types: [opened, edited, milestoned]
-
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+      boolean:
+        type: boolean
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - foo
+        - bar
+        - baz
 
 jobs:
   build:
@@ -19,7 +34,6 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content
 
-      - uses: actions/checkout@v2
       - name: print
         run: | 
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
