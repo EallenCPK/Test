@@ -1,10 +1,14 @@
 name: run main.py
 
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  issues:
+    types: [opened, edited, milestoned]
 
 jobs:
   build:
