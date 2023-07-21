@@ -6,9 +6,25 @@ name: run main.py
 #   pull_request:
 #     branches: [ "main" ]
 
+# on:
+#   issues:
+#     types: [opened, edited, milestoned]
 on:
-  issues:
-    types: [opened, edited, milestoned]
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+      boolean:
+        type: boolean
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
+        options:
+        - foo
+        - bar
+        - baz
 
 jobs:
   build:
