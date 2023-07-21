@@ -10,6 +10,14 @@ body:
     options:
     - label: I have searched the existing issues
       required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
 - type: textarea
   attributes:
     label: Current Behavior
