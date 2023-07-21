@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
+
       - name: greet
         run: | 
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
           echo "boolean is ${{ github.event.inputs.boolean }}" / ${{ inputs.boolean }} 
           echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
-          
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content
-
+      
       - name: setup python
         uses: actions/setup-python@v4
         with:
